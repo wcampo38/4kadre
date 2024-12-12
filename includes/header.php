@@ -10,6 +10,7 @@
     <!-- Inclure le CSS personnalisé -->
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -31,9 +32,8 @@
                         <li class="nav-item"><a href="pages/jeux-video.php" class="nav-link text-white">Jeux Vidéo</a></li>
                         <li class="nav-item"><a href="pages/reseaux-sociaux.php" class="nav-link text-white">Réseaux Sociaux</a></li>
                         <li class="nav-item"><a href="pages/cinema.php" class="nav-link text-white">Cinéma</a></li>
-                        <button id="theme-toggle" class="btn btn-outline-primary ms-3">
-                            <i id="theme-icon" class="bi"></i>
-                        </button>
+                        <button id="theme-toggle" class="btn btn-outline-primary ms-3"></button>
+
                     </ul>
                 </nav>
             </div>

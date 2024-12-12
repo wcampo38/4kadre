@@ -1,35 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
     const themeToggle = document.getElementById("theme-toggle");
-    const themeIcon = document.getElementById("theme-icon");
+    const themeIcon = document.createElement("i");
+    themeToggle.appendChild(themeIcon);
 
-    // Fonction pour mettre à jour l'icône
-    const updateIcon = () => {
-        if (document.documentElement.getAttribute("data-theme") === "dark") {
-            themeIcon.className = "bi bi-moon-fill"; // Lune pour le mode sombre
-        } else {
-            themeIcon.className = "bi bi-sun-fill"; // Soleil pour le mode clair
-        }
+    // Fonction pour appliquer le thème
+    const applyTheme = (theme) => {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+
+        // Mise à jour de l'icône
+        themeIcon.className = theme === "dark" ? "bi bi-moon-fill" : "bi bi-sun-fill";
     };
 
-    // Initialisation de l'icône au chargement de la page
-    updateIcon();
+    // Détecter le thème du système
+    const detectSystemTheme = () => {
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    };
 
-    // Événement de clic pour changer le thème
+    // Récupérer le thème enregistré ou utiliser celui du système
+    const savedTheme = localStorage.getItem("theme");
+    const systemTheme = detectSystemTheme();
+    const initialTheme = savedTheme || systemTheme;
+
+    // Appliquer le thème initial
+    applyTheme(initialTheme);
+
+    // Basculer le thème lors du clic sur le bouton
     themeToggle.addEventListener("click", () => {
-        if (document.documentElement.getAttribute("data-theme") === "dark") {
-            document.documentElement.removeAttribute("data-theme");
-            localStorage.setItem("theme", "light");
-        } else {
-            document.documentElement.setAttribute("data-theme", "dark");
-            localStorage.setItem("theme", "dark");
-        }
-        updateIcon(); // Met à jour l'icône après le changement de thème
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        applyTheme(currentTheme === "dark" ? "light" : "dark");
     });
 
-    // Vérification du thème enregistré dans le localStorage
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-        document.documentElement.setAttribute("data-theme", savedTheme);
-        updateIcon();
-    }
+    // Écouter les changements de thème système
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
+        if (!localStorage.getItem("theme")) {
+            applyTheme(event.matches ? "dark" : "light");
+        }
+    });
 });

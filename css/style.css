@@ -4,22 +4,29 @@
 
 /* Mode clair (par défaut) */
 :root {
-    --bg-color: #ffffff; /* Couleur de fond principale */
-    --text-color: #000000; /* Couleur principale du texte */
-    --card-bg-color: #f8f9fa; /* Couleur de fond des cartes */
-    --card-text-color: #333333; /* Couleur du texte des cartes */
-    --btn-bg-color: #007bff; /* Couleur de fond des boutons */
-    --btn-text-color: #ffffff; /* Couleur du texte des boutons */
+    --cyber-red: #e41e1b;
+    --cyber-purple: #d94090;
+    --cyber-yellow: #d1da56;
+    --cyber-blue: #3a4e9d;
+    --cyber-dark-blue: #754192;
+    --cyber-black: #121212;
+
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --card-bg-color: #f8f9fa;
+    --card-text-color: #333333;
+    --btn-bg-color: #007bff;
+    --btn-text-color: #ffffff;
 }
 
 /* Mode sombre */
 [data-theme="dark"] {
-    --bg-color: #2a2828; /* Couleur de fond principale */
-    --text-color: #ffffff; /* Couleur principale du texte */
-    --card-bg-color: #1e1e1e; /* Couleur de fond des cartes */
-    --card-text-color: #e0e0e0; /* Couleur du texte des cartes */
-    --btn-bg-color: #ffffff; /* Couleur de fond des boutons */
-    --btn-text-color: #000000; /* Couleur du texte des boutons */
+    --bg-color: #2a2828;
+    --text-color: #ffffff;
+    --card-bg-color: #1e1e1e;
+    --card-text-color: #e0e0e0;
+    --btn-bg-color: #007bff;
+    --btn-text-color: #000000;
 }
 
 /* ========================= */
@@ -27,11 +34,12 @@
 /* ========================= */
 
 body {
-    background-color: var(--bg-color); /* Fond adaptatif */
-    color: var(--text-color); /* Texte adaptatif */
-    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Rubik', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* ========================= */
@@ -39,103 +47,126 @@ body {
 /* ========================= */
 
 header {
-    background-color: var(--bg-color); /* Fond adaptatif */
-    border-bottom: 1px solid var(--card-text-color); /* Ligne fine en bas */
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--card-text-color);
     padding: 1rem 2rem;
 }
 
 header h1 {
-    color: var(--text-color); /* Couleur adaptative */
+    color: var(--text-color);
     font-size: 2rem;
     font-weight: bold;
     margin: 0;
 }
 
 header p {
-    color: var(--card-text-color); /* Texte secondaire */
+    color: var(--card-text-color);
     font-size: 1rem;
     margin: 0;
 }
 
-/* Liens de navigation */
 header .nav-link {
-    color: var(--text-color); /* Couleur adaptative */
+    color: var(--text-color);
     font-weight: bold;
     text-transform: uppercase;
     transition: color 0.3s;
 }
 
 header .nav-link:hover {
-    color: var(--btn-bg-color); /* Couleur du bouton pour l'effet hover */
+    color: var(--btn-bg-color);
+}
+
+.logo {
+    max-width: 300px; /* Limite la largeur à 300px */
+    height: auto; /* Ajuste automatiquement la hauteur */
 }
 
 /* ========================= */
-/* SECTION DERNIERS ARTICLES */
+/* FOOTER                    */
 /* ========================= */
 
-#derniers-articles {
-    background-color: var(--bg-color); /* Fond adaptatif */
-    padding: 4rem 0;
-    text-align: center;
+.footer {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 2rem 0;
 }
 
-#derniers-articles h2 {
-    color: var(--text-color); /* Texte adaptatif */
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
+.footer .logo {
+    max-width: 150px;
+    height: auto;
 }
 
-.card {
-    background-color: var(--card-bg-color); /* Fond adaptatif */
-    border: 1px solid var(--card-text-color); /* Bordure fine */
+.footer .footer-icon {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.footer .footer-icon:hover {
+    color: var(--btn-bg-color);
+}
+
+.footer-card {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s; /* Effet de transition */
-}
-
-.card:hover {
-    transform: scale(1.05); /* Zoom au survol */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre légère */
-}
-
-.card-body {
-    color: var(--card-text-color); /* Texte adaptatif */
-    padding: 1rem;
-    text-align: left;
-}
-
-.card-text {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-/* ========================= */
-/* IMAGES DES CARTES         */
-/* ========================= */
-
-.card-img-top {
-    height: 180px; /* Hauteur fixe pour uniformité */
-    object-fit: cover; /* Découpe l'image sans la déformer */
-    border-bottom: 1px solid var(--card-text-color); /* Ligne entre l'image et le corps */
-}
-
-/* ========================= */
-/* BOUTONS                   */
-/* ========================= */
-
-button, .btn {
-    background-color: var(--btn-bg-color); /* Fond adaptatif */
-    color: var(--btn-text-color); /* Texte adaptatif */
-    border: none;
-    padding: 0.5rem 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
     font-size: 1rem;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: opacity 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    margin: auto;
+    overflow: hidden;
 }
 
-button:hover, .btn:hover {
-    opacity: 0.8; /* Légère transparence au survol */
+.footer-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Background Colors for Cards */
+.bg-cinema {
+    background-color: var(--cyber-yellow);
+    color: black;
+}
+
+.bg-social {
+    background-color: var(--cyber-purple);
+    color: white;
+}
+
+.bg-jeux-video {
+    background-color: var(--cyber-blue);
+    color: white;
+}
+
+.bg-photographie {
+    background-color: var(--cyber-red);
+    color: white;
+}
+
+.bg-musique {
+    background-color: var(--cyber-dark-blue);
+    color: white;
+}
+
+/* Style pour les mascottes */
+.mascotte-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.mascotte-icon:hover {
+    transform: scale(1.2);
 }
 
 /* ========================= */
@@ -143,51 +174,25 @@ button:hover, .btn:hover {
 /* ========================= */
 
 @media (max-width: 768px) {
-    #derniers-articles {
-        padding: 2rem 0; /* Réduction des marges */
-    }
-
-    .card-img-top {
-        height: 150px; /* Réduction de la taille des images */
+    .footer-card {
+        width: 120px;
+        height: 120px;
     }
 
     header h1 {
-        font-size: 1.5rem; /* Réduction de la taille du titre */
+        font-size: 1.5rem;
+    }
+
+    .logo-header {
+        max-width: 100px;
     }
 }
 
-
-.bg-dark {
-    background-color: var(--bg-color) !important; /* Fond adaptatif */
-    color: var(--text-color) !important; /* Texte adaptatif */
-}
-
-.text-white {
-    color: var(--text-color) !important; /* Texte adaptatif */
-}
-#notification {
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.1); /* Couleur de fond douce */
-    transition: opacity 0.5s ease; /* Transition fluide */
-}
-.logo {
-    max-width: 300px; /* Limite la largeur à 300px */
-    height: auto; /* Ajuste automatiquement la hauteur */
-}
-#suivez-nous img {
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
-    height: 150px; /* Ajuste la hauteur */
-    object-fit: cover; /* Assure le bon ratio */
-}
-
-#suivez-nous img:hover {
-    transform: scale(1.05);
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: invert(1); /* Rend les flèches visibles sur un fond clair */
+.footer-bottom {
+    background-color: var(--card-bg-color);
+    color: var(--card-text-color);
+    border-top: 1px solid var(--card-text-color);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 10px 0;
 }
