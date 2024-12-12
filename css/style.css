@@ -176,3 +176,18 @@ button:hover, .btn:hover {
     max-width: 300px; /* Limite la largeur à 300px */
     height: auto; /* Ajuste automatiquement la hauteur */
 }
+#suivez-nous img {
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    height: 150px; /* Ajuste la hauteur */
+    object-fit: cover; /* Assure le bon ratio */
+}
+
+#suivez-nous img:hover {
+    transform: scale(1.05);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1); /* Rend les flèches visibles sur un fond clair */
+}

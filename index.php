@@ -58,6 +58,43 @@
             ?>
         </div>
     </section>
+
+    <section id="suivez-nous" class="py-5 bg-light text-center">
+    <h2 class="mb-4">Suivez Nous!</h2>
+    <button class="btn btn-primary mb-4">Suivre +</button>
+    <div id="instagramCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Conteneur des items -->
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center">
+                    <img src="images/post1.jpg" class="d-block w-25 mx-2" alt="Post Instagram 1">
+                    <img src="images/post2.jpg" class="d-block w-25 mx-2" alt="Post Instagram 2">
+                    <img src="images/post3.jpg" class="d-block w-25 mx-2" alt="Post Instagram 3">
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <img src="images/post4.jpg" class="d-block w-25 mx-2" alt="Post Instagram 4">
+                    <img src="images/post5.jpg" class="d-block w-25 mx-2" alt="Post Instagram 5">
+                    <img src="images/post6.jpg" class="d-block w-25 mx-2" alt="Post Instagram 6">
+                </div>
+            </div>
+        </div>
+        <!-- Flèches de navigation -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#instagramCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Précédent</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#instagramCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+        </button>
+    </div>
+</section>
+
+
 </div>
 
 <script src="js/theme-toggle.js"></script>

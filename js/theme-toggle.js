@@ -1,23 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-    const currentTheme = localStorage.getItem("theme");
-
-    // Applique le thème actuel ou par défaut selon le système
-    if (currentTheme) {
-        document.documentElement.setAttribute("data-theme", currentTheme);
-    } else if (prefersDarkScheme.matches) {
-        document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-        document.documentElement.setAttribute("data-theme", "light");
-    }
-
-    // Bouton pour basculer entre les thèmes
     const themeToggle = document.getElementById("theme-toggle");
-    themeToggle.addEventListener("click", () => {
-        let theme = document.documentElement.getAttribute("data-theme");
-        let newTheme = theme === "dark" ? "light" : "dark";
+    const themeIcon = document.getElementById("theme-icon");
 
-        document.documentElement.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
+    // Fonction pour mettre à jour l'icône
+    const updateIcon = () => {
+        if (document.documentElement.getAttribute("data-theme") === "dark") {
+            themeIcon.className = "bi bi-moon-fill"; // Lune pour le mode sombre
+        } else {
+            themeIcon.className = "bi bi-sun-fill"; // Soleil pour le mode clair
+        }
+    };
+
+    // Initialisation de l'icône au chargement de la page
+    updateIcon();
+
+    // Événement de clic pour changer le thème
+    themeToggle.addEventListener("click", () => {
+        if (document.documentElement.getAttribute("data-theme") === "dark") {
+            document.documentElement.removeAttribute("data-theme");
+            localStorage.setItem("theme", "light");
+        } else {
+            document.documentElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+        }
+        updateIcon(); // Met à jour l'icône après le changement de thème
     });
+
+    // Vérification du thème enregistré dans le localStorage
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+        updateIcon();
+    }
 });

@@ -9,6 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Inclure le CSS personnalisé -->
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 
 <body class="bg-dark text-white">
@@ -29,6 +31,9 @@
                         <li class="nav-item"><a href="pages/jeux-video.php" class="nav-link text-white">Jeux Vidéo</a></li>
                         <li class="nav-item"><a href="pages/reseaux-sociaux.php" class="nav-link text-white">Réseaux Sociaux</a></li>
                         <li class="nav-item"><a href="pages/cinema.php" class="nav-link text-white">Cinéma</a></li>
+                        <button id="theme-toggle" class="btn btn-outline-primary ms-3">
+                            <i id="theme-icon" class="bi"></i>
+                        </button>
                     </ul>
                 </nav>
             </div>
@@ -40,7 +45,6 @@
                 <input type="email" name="email" class="form-control w-25" placeholder="Votre email" required>
                 <button type="submit" class="btn btn-primary ms-2">S'abonner</button>
 
-                <button id="theme-toggle" class="btn btn-outline-primary ms-3">Changer de thème</button>
 
             </form>
 
