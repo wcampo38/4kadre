@@ -14,9 +14,9 @@
 
 </head>
 
-<body class="bg-dark text-white">
+<body>
     <!-- Header -->
-    <header class="bg-dark text-white text-center py-4 position-relative">
+    <header class=" text-center py-4 position-relative">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <!-- Logo -->

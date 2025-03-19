@@ -14,38 +14,34 @@
             </div>
 
             <!-- Sections -->
-            <div class="row text-center">
-                <div class="col-6">
-                    <a href="pages/cinema.php" class="footer-card text-decoration-none text-white position-relative">
-                        <img src="image/mascotte-cinema.png" alt="Mascotte Cinéma" class="mascotte-icon">
-                        Cinéma
-                    </a>
-                </div>
-                <div class="col-6">
-                    <a href="pages/reseaux-sociaux.php" class="footer-card text-decoration-none text-white position-relative">
-                        <img src="image/mascotte-reseau.png" alt="Mascotte Réseaux Sociaux" class="mascotte-icon">
-                        Réseaux Sociaux
-                    </a>
-                </div>
-                <div class="col-6">
-                    <a href="pages/jeux-video.php" class="footer-card text-decoration-none text-white position-relative">
-                        <img src="image/mascotte-jeux.png" alt="Mascotte Jeux Vidéo" class="mascotte-icon">
-                        Jeux Vidéo
-                    </a>
-                </div>
-                <div class="col-6">
-                    <a href="pages/photographie.php" class="footer-card text-decoration-none text-white position-relative">
-                        <img src="image/mascotte-photo.png" alt="Mascotte Photographie" class="mascotte-icon">
-                        Photographie
-                    </a>
-                </div>
-                <div class="col-6">
-                    <a href="pages/musique.php" class="footer-card text-decoration-none text-white position-relative">
-                        <img src="image/mascotte-music.png" alt="Mascotte Musique" class="mascotte-icon">
-                        Musique
-                    </a>
-                </div>
+           <div class="row text-center">
+
+                <a href="pages/cinema.php" class="footer-card bg-cinema text-decoration-none text-white">
+                    <img src="image/mascotte-cinema.png" alt="Mascotte Cinéma" class="mascotte-icon">
+                    Cinéma
+                </a>
+
+                <a href="pages/reseaux-sociaux.php" class="footer-card bg-social text-decoration-none text-white ">
+                    <img src="image/mascotte-reseau.png" alt="Mascotte Réseaux Sociaux" class="mascotte-icon">
+                    Réseaux Sociaux
+                </a>
+
+                <a href="pages/jeux-video.php" class="footer-card bg-jeux-video text-decoration-none text-white ">
+                    <img src="image/mascotte-jeux.png" alt="Mascotte Jeux Vidéo" class="mascotte-icon">
+                    Jeux Vidéo
+                </a>
+
+                <a href="pages/photographie.php" class="footer-card bg-photographie text-decoration-none text-white ">
+                    <img src="image/mascotte-photo.png" alt="Mascotte Photographie" class="mascotte-icon">
+                    Photographie
+                </a>
+
+                <a href="pages/musique.php" class="footer-card bg-musique text-decoration-none text-white ">
+                    <img src="image/mascotte-music.png" alt="Mascotte Musique" class="mascotte-icon">
+                    Musique
+                </a>
             </div>
+        </div>
 
         </div>
     </div>
